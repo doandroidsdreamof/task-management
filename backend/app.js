@@ -13,7 +13,7 @@ server.use(express.json());
 
 server.listen(port, () => {
   console.log(
-    `server listen on http://localhost:9000/${port}`
+    `server listen on http://localhost:3000/${port}`
   );
   connectDB();
 });
