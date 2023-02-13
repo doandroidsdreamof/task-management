@@ -1,4 +1,7 @@
 import React from 'react'
+import {FormHeader} from '../components/common/commonIndex'
+
+
 
 const PasswordPage = () => {
   return (
