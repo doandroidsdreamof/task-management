@@ -1,15 +1,13 @@
 import React from 'react';
 
-//? react-router-dom //
-import { Link } from 'react-router-dom';
+//? local imports //
+import FormLayout from '../layout/FormLayout';
 import RegisterForm from '../components/register/RegisterForm';
 
 const RegisterPage = () => {
-
-
   return (
     <>
-<RegisterForm />
+      <FormLayout register={<RegisterForm />} />
     </>
   );
 };
