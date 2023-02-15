@@ -12,3 +12,12 @@ export interface FormLayoutProps {
 export interface TextProps {
   text: string;
 }
+
+export interface  LabelProps extends TextProps   {
+  htmlFor: string;
+}
+
+
+
+
+
