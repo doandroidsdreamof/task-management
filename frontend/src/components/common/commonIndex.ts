@@ -1,6 +1,4 @@
-import FormHeader from './FormHeader';
-import FormLinks from './FormLinks';
-import FormButton from './FormButton';
-import FormText from './FormText';
+import LoginForm from "../login/LoginForm";
 
-export { FormHeader, FormLinks, FormButton,FormText};
+
+export {LoginForm}
