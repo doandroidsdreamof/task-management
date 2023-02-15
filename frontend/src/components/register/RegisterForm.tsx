@@ -1,9 +1,19 @@
 import React from 'react';
 
 //? local imports //
-import { FormSubmitButton, FormEmail, FormLink, FormHeader, FormPassword,FormLabel } from '../common/commonIndex';
+import { FormSubmitButton, FormEmail, FormLink, FormHeader, FormPassword, FormLabel } from '../common/commonIndex';
+//? redux-toolkit //
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { saveUserName } from '../../store/reducers/reducersIndex';
+
+
+
 
 const RegisterForm = () => {
+  const dispatch = useAppDispatch();
+  const reduxRegisterForm = useAppSelector((state) => state.registerForm.registerFormSlice)
+
+
   return (
     <>
       <FormHeader text={'Create and account'} />
@@ -11,6 +21,7 @@ const RegisterForm = () => {
         <div>
           <FormLabel text={'User name'} htmlFor={'confirm-password'} />
           <input
+           onChange={(e) => dispatch(saveUserName(e.target.value))}
             type='text'
             name='userName'
             id='userName'

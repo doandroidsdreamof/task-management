@@ -2,11 +2,20 @@ import React from 'react';
 
 import FormLabel from './FormLabel';
 
+//? redux-toolkit //
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { saveEmail } from '../../store/reducers/reducersIndex';
+
 const FormEmail = () => {
+  const dispatch = useAppDispatch();
+  const reduxRegisterForm = useAppSelector((state) => state.registerForm.registerFormSlice)
+  console.log("🚀 ~ file: FormEmail.tsx:12 ~ FormEmail ~ reduxRegisterForm", reduxRegisterForm)
+
   return (
     <div>
-      <FormLabel text={'Your emai'} htmlFor={'email'} />
+      <FormLabel text={'Your email'} htmlFor={'email'} />
       <input
+        onChange={(e) => dispatch(saveEmail(e.target.value))}
         type='email'
         name='email'
         id='email'
