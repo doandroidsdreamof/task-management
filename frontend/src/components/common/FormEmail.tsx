@@ -6,16 +6,17 @@ import FormLabel from './FormLabel';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { saveEmail } from '../../store/reducers/reducersIndex';
 
+//? formik //
+import { Field } from 'formik';
+
 const FormEmail = () => {
   const dispatch = useAppDispatch();
   const reduxEmail = useAppSelector((state) => state.registerForm.formSlice)
-  console.log("🚀 ~ file: FormEmail.tsx:12 ~ FormEmail ~ reduxRegisterForm", reduxEmail)
 
   return (
     <div>
       <FormLabel text={'Your email'} htmlFor={'email'} />
-      <input
-        onChange={(e) => dispatch(saveEmail(e.target.value))}
+      <Field
         type='email'
         name='email'
         id='email'

@@ -6,6 +6,9 @@ import FormLabel from './FormLabel';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import {  savePassword } from '../../store/reducers/reducersIndex';
 
+//? formik //
+import { withFormik, FormikProps, FormikErrors, Form, Field } from 'formik';
+
 
 const FormPassword = () => {
   const dispatch = useAppDispatch()
@@ -14,8 +17,7 @@ const FormPassword = () => {
   return (
     <div>
       <FormLabel text={'Password'} htmlFor={'password'} />
-      <input
-         onChange={(e) => dispatch(savePassword(e.target.value))}
+      <Field
         type='password'
         name='password'
         id='password'

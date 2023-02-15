@@ -18,6 +18,17 @@ export interface  LabelProps extends TextProps   {
 }
 
 
+export interface LoginFormProps {
+  email: string;
+  password: string;
+}
 
 
+export interface RegisterFormProps {
+  userName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
 
+
+}

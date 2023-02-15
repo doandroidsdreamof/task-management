@@ -5,12 +5,30 @@ import { FormSubmitButton, FormEmail, FormLink, FormHeader, FormPassword, FormLa
 
 //? react-router-dom //
 import { Link } from 'react-router-dom';
+//? formik //
+import { withFormik, FormikProps, FormikErrors, Form, Field, Formik } from 'formik';
+
+//? types && interfaces //
+import { LoginFormProps } from '../../types/interface';
+
+//? redux-toolkit //
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { saveUserName, saveConfirmPassword } from '../../store/reducers/reducersIndex';
 
 const LoginForm = () => {
+  const dispatch = useAppDispatch();
+  const loginValues: LoginFormProps = { email: '', password: '' };
+
   return (
-    <>
-      <FormHeader text={'Sign in to your account'} />
-      <form className='space-y-4 md:space-y-6' action='#'>
+    <Formik
+      initialValues={loginValues}
+      onSubmit={(values, actions) => {
+        console.log({ values, actions });
+        actions.setSubmitting(false);
+      }}
+    >
+      <Form className='space-y-4 md:space-y-6'>
+        <FormHeader text={'Sign in to your account'} />
         <FormEmail />
         <FormPassword />
         <div className='flex items-center justify-between'>
@@ -36,8 +54,8 @@ const LoginForm = () => {
         </div>
         <FormSubmitButton text={'Sign in'} />
         <FormLink text={'Don’t have an account yet?'} link={'Sign up'} router={'register'} />
-      </form>
-    </>
+      </Form>
+    </Formik>
   );
 };
 
