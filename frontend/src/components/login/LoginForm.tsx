@@ -1,18 +1,15 @@
 import React from 'react';
 
 //? local imports //
-import{FormSubmitButton,FormEmail,FormLink,FormHeader} from '../common/commonIndex'
-
+import { FormSubmitButton, FormEmail, FormLink, FormHeader } from '../common/commonIndex';
 
 //? react-router-dom //
 import { Link } from 'react-router-dom';
 
-
 const LoginForm = () => {
   return (
     <>
-
-     <FormHeader text={' Sign in to your account '} />
+      <FormHeader text={' Sign in to your account '} />
       <form className='space-y-4 md:space-y-6' action='#'>
         <FormEmail />
         <div>
