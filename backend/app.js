@@ -1,24 +1,22 @@
-import express from 'express';
-import * as dotenv from 'dotenv';
-import { connectDB } from './config/db.js';
-
+const express = require('express');
+const dotenv = require('dotenv');
+const connectDB = require('./config/db');
+const testRouter = require('./routes/routerTest');
+const helloWorld = require('./routes/router2')
+const registerRouter = require('./routes/autRouter')
 
 dotenv.config();
-const server = express();
+const app = express();
 const port = process.env.PORT || 3000;
 
 //middleware
-server.use(express.json());
+app.use(express.json());
+app.use(testRouter);
+app.use(registerRouter);
 
 
-server.listen(port, () => {
-  console.log(
-    `server listen on http://localhost:3000/${port}`
-  );
+app.listen(port, () => {
+  console.log(`app listening on port ${port}`);
   connectDB();
 });
 
-
-server.get('/', (req,res) =>{
-    res.status(200).json({test: "ok"})
-})

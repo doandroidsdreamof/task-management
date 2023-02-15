@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 //? local imports //
 import {
@@ -11,11 +11,15 @@ import {
   FormError,
 } from '../common/commonIndex';
 
+//? axios //
+import axios from 'axios';
+
 //? redux-toolkit //
 import { useAppDispatch } from '../../store/hooks';
 
 //? formik //
 import { Form, Field, Formik } from 'formik';
+import * as Yup from 'yup';
 
 //? types && interfaces //
 import { RegisterFormProps } from '../../types/interface';
@@ -23,9 +27,35 @@ import { RegisterFormProps } from '../../types/interface';
 //? helper functions //
 import SignupSchema from '../../schemas/registerSchema';
 
+import getRequest from '../../api/getRequest';
+
 const RegisterForm = () => {
   const dispatch = useAppDispatch();
-  const registerValues: RegisterFormProps = { userName: '', email: '', password: '', confirmPassword: '' };
+  const registerValues: RegisterFormProps = { userName: '', password: '', email: '', confirmPassword: '' };
+
+  const [x, setX] = useState();
+
+  function testPost(postData: RegisterFormProps) {
+    axios
+      .post('http://localhost:3000/register', {
+        userName: postData.userName,
+        email: postData.email,
+        password: postData.password
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  function getValidData(data: RegisterFormProps) {
+    SignupSchema.isValid(data).then((valid) => {
+      console.log(valid); // true
+      testPost(data)
+    });
+  }
 
   return (
     <div>
@@ -34,6 +64,7 @@ const RegisterForm = () => {
         initialValues={registerValues}
         onSubmit={(values, actions) => {
           actions.setSubmitting(false);
+          getValidData(values);
         }}
       >
         <Form className='space-y-4 md:space-y-6'>

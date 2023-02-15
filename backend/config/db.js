@@ -1,12 +1,13 @@
-import mongoose from 'mongoose';
-import * as dotenv from 'dotenv';
+const mongoose = require('mongoose')
+const dotenv = require('dotenv')
 dotenv.config();
 
 
 // Your URI
 const URI = process.env.MONGODB_URI;
+console.log("🚀 ~ file: db.js:8 ~ URI", URI)
 
-export async function connectDB() {
+ async function connectDB() {
   try {
     await mongoose.connect(URI);
     console.log('db connection ok');
@@ -17,3 +18,5 @@ export async function connectDB() {
     );
   }
 }
+
+module.exports = connectDB
