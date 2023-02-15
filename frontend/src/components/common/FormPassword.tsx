@@ -2,11 +2,20 @@ import React from 'react';
 
 import FormLabel from './FormLabel';
 
+//? redux-toolkit //
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import {  savePassword } from '../../store/reducers/reducersIndex';
+
+
 const FormPassword = () => {
+  const dispatch = useAppDispatch()
+
+
   return (
     <div>
       <FormLabel text={'Password'} htmlFor={'password'} />
       <input
+         onChange={(e) => dispatch(savePassword(e.target.value))}
         type='password'
         name='password'
         id='password'

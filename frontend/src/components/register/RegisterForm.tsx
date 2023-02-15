@@ -4,15 +4,10 @@ import React from 'react';
 import { FormSubmitButton, FormEmail, FormLink, FormHeader, FormPassword, FormLabel } from '../common/commonIndex';
 //? redux-toolkit //
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { saveUserName } from '../../store/reducers/reducersIndex';
-
-
-
+import { saveUserName, saveConfirmPassword } from '../../store/reducers/reducersIndex';
 
 const RegisterForm = () => {
   const dispatch = useAppDispatch();
-  const reduxRegisterForm = useAppSelector((state) => state.registerForm.registerFormSlice)
-
 
   return (
     <>
@@ -21,7 +16,7 @@ const RegisterForm = () => {
         <div>
           <FormLabel text={'User name'} htmlFor={'confirm-password'} />
           <input
-           onChange={(e) => dispatch(saveUserName(e.target.value))}
+            onChange={(e) => dispatch(saveUserName(e.target.value))}
             type='text'
             name='userName'
             id='userName'
@@ -34,6 +29,7 @@ const RegisterForm = () => {
         <div>
           <FormLabel text={'Confirm password'} htmlFor={'confirm-password'} />
           <input
+            onChange={(e) => dispatch(saveConfirmPassword(e.target.value))}
             type='confirm-password'
             name='confirm-password'
             id='confirm-password'
