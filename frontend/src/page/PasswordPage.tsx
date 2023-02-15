@@ -1,10 +1,14 @@
 import React from 'react'
 
-
+//? local imports //
+import FormLayout from '../layout/FormLayout';
+import ResetPasswordForm from '../components/resetPassword/ResetPasswordForm';
 
 const PasswordPage = () => {
   return (
-    <div>PasswordPage</div>
+    <>
+      <FormLayout resetPassword={<ResetPasswordForm />} />
+    </>
   )
 }
 

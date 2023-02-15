@@ -7,6 +7,7 @@ export interface FormLinkProps {
 export interface FormLayoutProps {
   login?: React.ReactNode;
   register?: React.ReactNode;
+  resetPassword?: React.ReactNode;
 }
 
 export interface TextProps {
@@ -23,6 +24,9 @@ export interface LoginFormProps {
   password: string;
 }
 
+export interface ResetPassword extends LoginFormProps {
+  confirmPassword: string;
+}
 
 export interface RegisterFormProps {
   userName: string;
@@ -37,3 +41,5 @@ export interface FormErrorProps {
   name: string;
 
 }
+
+

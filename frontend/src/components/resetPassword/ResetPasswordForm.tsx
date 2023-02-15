@@ -18,37 +18,25 @@ import { useAppDispatch } from '../../store/hooks';
 import { Form, Field, Formik } from 'formik';
 
 //? types && interfaces //
-import { RegisterFormProps } from '../../types/interface';
+import { ResetPassword } from '../../types/interface';
 
 //? helper functions //
-import SignupSchema from '../../schemas/registerSchema';
+import resetSchema from '../../schemas/resetSchema';
 
-const RegisterForm = () => {
-  const dispatch = useAppDispatch();
-  const registerValues: RegisterFormProps = { userName: '', email: '', password: '', confirmPassword: '' };
+const ResetPasswordForm = () => {
+  const newPasswordValues: ResetPassword = { email: '', password: '', confirmPassword: '' };
 
   return (
     <div>
       <Formik
-        validationSchema={SignupSchema}
-        initialValues={registerValues}
+        validationSchema={resetSchema}
+        initialValues={newPasswordValues}
         onSubmit={(values, actions) => {
           actions.setSubmitting(false);
         }}
       >
         <Form className='space-y-4 md:space-y-6'>
-          <FormHeader text={'Create an account'} />
-          <div>
-            <FormLabel text={'User name'} htmlFor={'confirm-password'} />
-            <Field
-              type='text'
-              name='userName'
-              id='userName'
-              placeholder='User name'
-              className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-            />
-            <FormError name='userName' />
-          </div>
+          <FormHeader text={'Change Password'} />
           <FormEmail />
           <FormError name='email' />
           <FormPassword />
@@ -62,12 +50,11 @@ const RegisterForm = () => {
             />
             <FormError name='confirmPassword' />
           </div>
-          <FormSubmitButton text={'Create an account'} />
-          <FormLink text={'Already have an account?'} link={'Login here'} router={'login'} />
+          <FormSubmitButton text={'Reset password'} />
         </Form>
       </Formik>
     </div>
   );
 };
 
-export default RegisterForm;
+export default ResetPasswordForm;
