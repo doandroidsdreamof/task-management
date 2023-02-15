@@ -1,15 +1,13 @@
 import React from 'react';
 
 //? local imports //
-
-//? react-router-dom //
-import { Link } from 'react-router-dom';
 import LoginForm from '../components/login/LoginForm';
+import FormLayout from '../layout/FormLayout';
 
 const LoginPage = () => {
   return (
     <>
-      <LoginForm />
+      <FormLayout login={<LoginForm />} />
     </>
   );
 };
