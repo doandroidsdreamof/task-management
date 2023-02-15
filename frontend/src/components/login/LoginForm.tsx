@@ -23,7 +23,6 @@ const LoginForm = () => {
     <Formik
       initialValues={loginValues}
       onSubmit={(values, actions) => {
-        console.log({ values, actions });
         actions.setSubmitting(false);
       }}
     >
