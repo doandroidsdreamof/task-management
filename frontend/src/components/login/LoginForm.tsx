@@ -11,7 +11,7 @@ const LoginForm = () => {
     <>
       <FormHeader text={'Sign in to your account'} />
       <form className='space-y-4 md:space-y-6' action='#'>
-          <FormEmail />
+        <FormEmail />
         <FormPassword />
         <div className='flex items-center justify-between'>
           <div className='flex items-start'>

@@ -8,8 +8,8 @@ import { saveEmail } from '../../store/reducers/reducersIndex';
 
 const FormEmail = () => {
   const dispatch = useAppDispatch();
-  const reduxRegisterForm = useAppSelector((state) => state.registerForm.registerFormSlice)
-  console.log("🚀 ~ file: FormEmail.tsx:12 ~ FormEmail ~ reduxRegisterForm", reduxRegisterForm)
+  const reduxEmail = useAppSelector((state) => state.registerForm.formSlice)
+  console.log("🚀 ~ file: FormEmail.tsx:12 ~ FormEmail ~ reduxRegisterForm", reduxEmail)
 
   return (
     <div>

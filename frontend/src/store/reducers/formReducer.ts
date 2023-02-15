@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const registerFormSlice = createSlice({
-  name: 'registerForm',
+const formSlice = createSlice({
+  name: 'formValue',
   initialState: {
     userName: '',
     email: '',
@@ -21,7 +21,10 @@ const registerFormSlice = createSlice({
     saveConfirmPassword: (state, action) => {
       state.confirmPassword = action.payload;
     },
+    cleanUpForm: (state) => {
+      (state.userName = ''), (state.email = ''), (state.password = ''), (state.confirmPassword = '');
+    },
   },
 });
 
-export default registerFormSlice;
+export default formSlice;

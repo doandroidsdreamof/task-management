@@ -1,11 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import registerFormSlice from './registerReducer';
-import loginFormSlice from './loginReducer';
+import formSlice from './formReducer';
 
-export const { saveUserName, saveEmail, savePassword, saveConfirmPassword } = registerFormSlice.actions;
-export const { saveLoginPassword, saveLoginEmail } = loginFormSlice.actions;
+export const { saveUserName, saveEmail, savePassword, saveConfirmPassword, cleanUpForm } = formSlice.actions;
 
 export default combineReducers({
-  registerFormSlice: registerFormSlice.reducer,
-  loginFormSlice: loginFormSlice.reducer,
+  formSlice: formSlice.reducer,
+
 });
