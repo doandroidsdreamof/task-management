@@ -32,3 +32,8 @@ export interface RegisterFormProps {
 
 
 }
+
+export interface FormErrorProps {
+  name: string;
+
+}

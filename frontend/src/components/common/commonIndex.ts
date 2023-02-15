@@ -5,5 +5,6 @@ import FormHeader from './FormHeader';
 import FormLink from './FormLink';
 import FormPassword from './FormPassword';
 import FormLabel from './FormLabel';
+import FormError from './FormError';
 
-export { LoginForm, FormSubmitButton, FormEmail, FormHeader, FormLink, FormPassword,FormLabel };
+export { LoginForm, FormSubmitButton, FormEmail, FormHeader, FormLink, FormPassword,FormLabel,FormError };
