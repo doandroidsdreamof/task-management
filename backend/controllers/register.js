@@ -1,16 +1,24 @@
-const UserModel = require('../models/newUser');
+const User = require('../models/newUser');
 
-const createUser = (req, res) => {
-  UserModel.findOne({ email: req.body.email })
-    .then((user) => {
-      if (user) {
-        return res.status(400).json({ error: 'email already exist' });
-      } else {
-        const model = UserModel.create(req.body);
-        return res.send('register is successful').json(model);
-      }
-    })
-    .catch((err) => console.log(err));
+const createUser = async (req, res) => {
+  try {
+    const userExist = await User.find({ userName: req.body.userName });
+    if (userExist.length > 0) {
+      return res.status(400).send({ message: 'User already exists' });
+    } else {
+      const user = await User.create({
+        userName: req.body.userName,
+        email: req.body.email,
+        password: req.body.password,
+      });
+    }
+    res.status(200).json({ msg: 'Register is successful' });
+  } catch (err) {
+    console.log('🚀 ~ file: register.js:14 ~ createUser ~ err', err);
+    res.status(400).send('Information is missing');
+  }
 };
 
-module.exports = createUser;
+module.exports = {
+  createUser,
+};

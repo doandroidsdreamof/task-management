@@ -1,22 +1,37 @@
 const express = require('express');
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 const connectDB = require('./config/db');
-const testRouter = require('./routes/routerTest');
-const helloWorld = require('./routes/router2')
-const registerRouter = require('./routes/autRouter')
+const registerRouter = require('./routes/autRouter');
+const bodyParser = require('body-parser');
+const path = require('path');
 
-dotenv.config();
-const app = express();
 const port = process.env.PORT || 3000;
 
+connectDB();
+
+const app = express();
+
 //middleware
+
 app.use(express.json());
-app.use(testRouter);
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
 app.use(registerRouter);
+
+
+
+
+
+
+
+
+
 
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`);
-  connectDB();
 });
+
+
 
