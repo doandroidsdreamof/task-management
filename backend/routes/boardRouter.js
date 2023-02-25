@@ -5,7 +5,7 @@ const {createBoard} = require('../controllers/board')
 const {authMachine } = require('../middleware/authControl')
 
 
-router.post('/v1/kanban/user/board',authMachine, createBoard);
+router.post('/v1/kanban/users/board',authMachine, createBoard);
 
 
 module.exports = router;
