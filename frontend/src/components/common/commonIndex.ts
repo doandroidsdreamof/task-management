@@ -8,9 +8,18 @@ import FormLabel from './FormLabel';
 import FormError from './FormError';
 import TopNavbar from './TopNavbar';
 import AsideBar from './AsideBar';
+import DarkModeToggle from './DarkModeToggle';
 
-
-
-
-
-export { LoginForm, FormSubmitButton, FormEmail, FormHeader, FormLink, FormPassword,FormLabel,FormError,TopNavbar,AsideBar };
+export {
+  LoginForm,
+  FormSubmitButton,
+  FormEmail,
+  FormHeader,
+  FormLink,
+  FormPassword,
+  FormLabel,
+  FormError,
+  TopNavbar,
+  AsideBar,
+  DarkModeToggle,
+};

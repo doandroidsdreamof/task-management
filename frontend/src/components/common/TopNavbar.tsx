@@ -44,7 +44,7 @@ const TopNavbar = () => {
               </svg>
             </button>
             <span className='self-center font-roboto  text-2xl font-bold sm:text-2xl whitespace-nowrap dark:text-white'>
-              Logo.
+              Kanban.
             </span>
           </div>
           <div className='flex items-center'>
@@ -53,7 +53,14 @@ const TopNavbar = () => {
                 <Dropdown
                   arrowIcon={false}
                   inline={true}
-                  label={<Avatar className='border-gray-300 border rounded-full ' alt='User settings' img={AvatarPlaceHolder} rounded={true} />}
+                  label={
+                    <Avatar
+                      className='border-gray-300 border rounded-full '
+                      alt='User settings'
+                      img={AvatarPlaceHolder}
+                      rounded={true}
+                    />
+                  }
                 >
                   <Dropdown.Header>
                     <span className='block text-sm'>User name</span>
