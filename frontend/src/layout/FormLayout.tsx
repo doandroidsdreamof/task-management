@@ -1,7 +1,12 @@
 import React, { FC } from 'react';
 
-//? types && interfaces //
-import { FormLayoutProps } from '../types/interface';
+
+ interface FormLayoutProps {
+  login?: React.ReactNode;
+  register?: React.ReactNode;
+  resetPassword?: React.ReactNode;
+}
+
 
 const FormLayout: FC<FormLayoutProps> = ({ login, register, resetPassword }: FormLayoutProps) => {
   return (

@@ -5,7 +5,7 @@ import { FormLabel, FormError } from '../common/commonIndex';
 
 //? redux-toolkit //
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { savePassword } from '../../store/reducers/reducersIndex';
+import { savePassword } from '../../store/slices/slicesIndex';
 
 //? formik //
 import { withFormik, FormikProps, FormikErrors, Form, Field } from 'formik';

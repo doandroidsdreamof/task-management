@@ -4,11 +4,6 @@ export interface FormLinkProps {
   router: string;
 }
 
-export interface FormLayoutProps {
-  login?: React.ReactNode;
-  register?: React.ReactNode;
-  resetPassword?: React.ReactNode;
-}
 
 export interface TextProps {
   text: string;

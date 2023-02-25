@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 //? redux-toolkit //
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { cleanUpForm } from '../../store/reducers/reducersIndex';
+import { cleanUpForm } from '../../store/slices/slicesIndex';
 
 const FormLink: FC<FormLinkProps> = ({ text, link, router }: FormLinkProps) => {
   const dispatch = useAppDispatch();

@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import reducers from './reducers/reducersIndex';
+import reducers from './slices/slicesIndex';
 
 export const store = configureStore({
   reducer: {
-    registerForm: reducers,
+    store: reducers,
   },
 });
 

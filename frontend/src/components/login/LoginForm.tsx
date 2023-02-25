@@ -13,7 +13,7 @@ import { LoginFormProps } from '../../types/interface';
 
 //? redux-toolkit //
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { saveUserName, saveConfirmPassword } from '../../store/reducers/reducersIndex';
+import { saveUserName, saveConfirmPassword } from '../../store/slices/slicesIndex';
 
 const LoginForm = () => {
   const dispatch = useAppDispatch();

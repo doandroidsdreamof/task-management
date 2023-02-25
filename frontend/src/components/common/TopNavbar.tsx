@@ -1,13 +1,26 @@
 import React from 'react';
-import AvatarPlaceHolder from '../assets/images/avatar-placeholder.png';
+import AvatarPlaceHolder from '../../assets/images/avatar-placeholder.png';
+
+//? redux-toolkit //
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { toggleNavBar } from '../../store/slices/slicesIndex';
 
 const TopNavbar = () => {
+  const dispatch = useAppDispatch();
+  const navbarRedux = useAppSelector((state) => state.store.navbarSlice.navbarState);
+
+
+  const handleToggle = function () {
+    dispatch(toggleNavBar());
+  };
+
   return (
     <nav className='fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700'>
       <div className='px-3 py-3 lg:px-5 lg:pl-3'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center justify-start'>
             <button
+              onClick={() => handleToggle()}
               data-drawer-target='logo-sidebar'
               data-drawer-toggle='logo-sidebar'
               aria-controls='logo-sidebar'
