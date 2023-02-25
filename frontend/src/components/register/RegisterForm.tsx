@@ -33,11 +33,10 @@ const RegisterForm = () => {
   const dispatch = useAppDispatch();
   const registerValues: RegisterFormProps = { userName: '', password: '', email: '', confirmPassword: '' };
 
-  const [x, setX] = useState();
 
   function testPost(postData: RegisterFormProps) {
     axios
-      .post('http://localhost:3000/register', {
+      .post('http://localhost:3000/v1/kanban/users/register', {
         userName: postData.userName,
         email: postData.email,
         password: postData.password

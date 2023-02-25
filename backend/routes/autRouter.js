@@ -10,6 +10,6 @@ const  {authMachine} = require('../middleware/authControl');
 
 router.post('/v1/kanban/users/register', createUser);
 router.post('/v1/kanban/users/login', loginUser)
-router.get('/v1/kanban/users/profile', authMachine,getUser)
+router.get('/v1/kanban/users/profiles', authMachine,getUser)
 
 module.exports = router;
