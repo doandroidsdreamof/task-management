@@ -2,12 +2,15 @@ const express = require('express');
 const dotenv = require('dotenv').config();
 const connectDB = require('./config/db');
 const authUser = require('./routes/autRouter');
+const board = require('./routes/boardRouter');
 const path = require('path');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
+
+
 
 const port = process.env.PORT || 3000;
 
@@ -26,6 +29,8 @@ app.use(cors(corsOptions));
 //middleware
 app.use(express.json());
 app.use(authUser);
+app.use(board);
+
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`);

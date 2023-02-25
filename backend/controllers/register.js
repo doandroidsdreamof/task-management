@@ -1,5 +1,5 @@
 const asyncHandler = require('express-async-handler');
-const User = require('../models/newUser');
+const User = require('../models/userModel');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -26,7 +26,7 @@ const createUser = asyncHandler(async (req, res) => {
     });
     if (user) {
       const token = jwt.sign({ id: user._id, email: user.email }, jwtSecret);
-      return res.status(200).json({ msg: 'Register is successful', token: token });
+      return res.status(200).json({ msg: 'Register is successful', token: token, userID: user._id });
     }
   }
 });
