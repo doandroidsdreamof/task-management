@@ -4,15 +4,13 @@ export interface FormLinkProps {
   router: string;
 }
 
-
 export interface TextProps {
   text: string;
 }
 
-export interface  LabelProps extends TextProps   {
+export interface LabelProps extends TextProps {
   htmlFor: string;
 }
-
 
 export interface LoginFormProps {
   email: string;
@@ -28,13 +26,9 @@ export interface RegisterFormProps {
   email: string;
   password: string;
   confirmPassword: string;
-
-
 }
 
 export interface FormErrorProps {
   name: string;
-
 }
-
 

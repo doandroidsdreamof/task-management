@@ -24,7 +24,6 @@ const TopNavbar = () => {
   useEffect(() => {
     //* reset toggle state with screen change //
     new ResizeObserver(() => {
-      console.log('observer works');
       if (mediaQuery.matches) {
         return;
       }

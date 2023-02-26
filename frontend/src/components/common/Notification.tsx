@@ -1,20 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState, useRef, MouseEventHandler } from 'react';
 
 const Notification = () => {
+  const [toggle, setToggle] = useState<boolean>(false);
+  const notificationRef = React.useRef<any>(null);
 
-  const [toggle,setToggle] = useState(false)
-  useEffect(() =>{
+  useEffect(() => {
+    document.addEventListener('mousedown', closeOpenMenus);
+  }, []);
 
-
-  },[])
-
-
-
+  const closeOpenMenus = (e: MouseEvent): void => {
+    if (notificationRef.current && notificationRef && !notificationRef.current.contains(e.target)) {
+      setToggle(false);
+    }
+  };
 
   return (
     <>
       <button
         onClick={() => setToggle(!toggle)}
+        ref={notificationRef}
         type='button'
         data-dropdown-toggle='notification-dropdown'
         className='p-2 mr-1 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600'
@@ -33,7 +37,12 @@ const Notification = () => {
       </button>
 
       <div
-        className={!toggle ? 'hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700' : 'top-16 right-5 fixed overflow-hidden z-50  max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700'}
+        ref={notificationRef}
+        className={
+          !toggle
+            ? 'hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700'
+            : 'top-16 right-5 fixed overflow-hidden z-50  max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700'
+        }
         id='notification-dropdown'
       >
         <div className='block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
@@ -41,25 +50,7 @@ const Notification = () => {
         </div>
         <div>
           <a href='#' className='flex py-3 px-4 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600'>
-            <div className='flex-shrink-0'>
-              <img
-                className='w-11 h-11 rounded-full'
-                src='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png'
-                alt='Bonnie Green avatar'
-              />
-              <div className='flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 rounded-full border border-white bg-primary-700 dark:border-gray-700'>
-                <svg
-                  aria-hidden='true'
-                  className='w-3 h-3 text-white'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path d='M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z'></path>
-                  <path d='M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z'></path>
-                </svg>
-              </div>
-            </div>
+            <div className='flex-shrink-0'></div>
             <div className='pl-3 w-full'>
               <div className='text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400'>
                 New message from <span className='font-semibold text-gray-900 dark:text-white'>Bonnie Green</span>:
@@ -85,7 +76,7 @@ const Notification = () => {
               <path
                 fillRule='evenodd'
                 d='M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z'
-                clip-rule='evenodd'
+                clipRule='evenodd'
               ></path>
             </svg>
             View all
