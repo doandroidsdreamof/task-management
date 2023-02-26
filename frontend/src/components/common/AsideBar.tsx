@@ -4,18 +4,21 @@ import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { toggleNavBar } from '../../store/slices/slicesIndex';
 
-import { DarkModeToggle,BoardIndicator } from '../common/commonIndex';
+import { DarkModeToggle, BoardIndicator } from '../common/commonIndex';
 
 const AsideBar = () => {
   const navbarRedux = useAppSelector((state) => state.store.navbarSlice.navbarState);
-  const asideStyleToggle: string =
-    'fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform  bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700';
-  const asideStyle: string = asideStyleToggle.concat(' -translate-x-full');
-
-  useEffect(() => {}, [navbarRedux]);
 
   return (
-    <aside id='logo-sidebar' className={navbarRedux ? asideStyle : asideStyleToggle} aria-label='Sidebar'>
+    <aside
+      id='logo-sidebar'
+      className={
+        navbarRedux
+          ? 'fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform  bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700'
+          : 'fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700'
+      }
+      aria-label='Sidebar'
+    >
       <div className='h-full flex flex-col  px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800'>
         <div>
           <ul className='space-y-2'>
@@ -29,7 +32,6 @@ const AsideBar = () => {
             </li>
           </ul>
         </div>
-
         <DarkModeToggle />
       </div>
     </aside>

@@ -11,6 +11,7 @@ import AsideBar from './AsideBar';
 import DarkModeToggle from './DarkModeToggle';
 import BoardIndicator from './BoardIndicator';
 import AddTaskButton from './AddTaskButton';
+import SearchInput from './SearchInput';
 
 
 export {
@@ -26,5 +27,6 @@ export {
   AsideBar,
   DarkModeToggle,
   BoardIndicator,
-  AddTaskButton
+  AddTaskButton,
+  SearchInput
 };

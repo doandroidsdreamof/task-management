@@ -6,18 +6,20 @@ interface FormLayoutProps {
   asideBar: React.ReactNode;
   topNavbar: React.ReactNode;
   addTaskButton: React.ReactNode;
+  searchInput: React.ReactNode;
 }
 
-const HomeLayout: FC<FormLayoutProps> = ({ asideBar, topNavbar, addTaskButton }: FormLayoutProps) => {
+const HomeLayout: FC<FormLayoutProps> = ({ asideBar, topNavbar, addTaskButton, searchInput }: FormLayoutProps) => {
   return (
-    <main>
+    <main className='bg-gray-200 h-screen flex flex-col '>
+      <div>
       <div>{topNavbar}</div>
-      <div>{asideBar}</div>
-      <div className='bg-gray-200  flex pt-5 px-2   w-full h-screen'>
-        <div className='mt-16'>{addTaskButton}</div>
+      <div >{asideBar}</div>
       </div>
-
-
+      <div className=' sm:ml-64 px-2 border items-center  border-black ml-auto  flex-row mt-24 justify-between  flex   w-full   '>
+        <div className=''>{addTaskButton} </div>
+        <div className=''>{searchInput} </div>
+      </div>
     </main>
   );
 };
