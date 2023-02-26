@@ -7,6 +7,9 @@ import { toggleNavBar } from '../../store/slices/slicesIndex';
 
 import { Dropdown, Avatar } from 'flowbite-react';
 
+//? react-router-dom //
+import { Link } from 'react-router-dom';
+
 const TopNavbar = () => {
   const dispatch = useAppDispatch();
   const navbarRedux = useAppSelector((state) => state.store.navbarSlice.navbarState);
@@ -28,20 +31,43 @@ const TopNavbar = () => {
               type='button'
               className='inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
             >
-              <span className='sr-only'>Open sidebar</span>
-              <svg
-                className='w-6 h-6'
-                aria-hidden='true'
-                fill='currentColor'
-                viewBox='0 0 20 20'
-                xmlns='http://www.w3.org/2000/svg'
-              >
-                <path
-                  clip-rule='evenodd'
-                  fill-rule='evenodd'
-                  d='M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z'
-                ></path>
-              </svg>
+              {navbarRedux ? (
+                <>
+                  <span className='sr-only'>Open sidebar</span>
+                  <svg
+                    className='w-6 h-6'
+                    aria-hidden='true'
+                    fill='currentColor'
+                    viewBox='0 0 20 20'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path
+                      clipRule='evenodd'
+                      fillRule='evenodd'
+                      d='M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z'
+                    ></path>
+                  </svg>
+                </>
+              ) : (
+                <>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    className='feather feather-x'
+                  >
+                    <line x1='18' y1='6' x2='6' y2='18'></line>
+                    <line x1='6' y1='6' x2='18' y2='18'></line>
+                  </svg>
+                  <span className='sr-only'>Close sidebar</span>
+                </>
+              )}
             </button>
             <span className='self-center font-roboto  text-2xl font-bold sm:text-2xl whitespace-nowrap dark:text-white'>
               Kanban.
@@ -51,11 +77,12 @@ const TopNavbar = () => {
             <div className='flex items-center ml-3'>
               <div>
                 <Dropdown
+                  className='w-40'
                   arrowIcon={false}
                   inline={true}
                   label={
                     <Avatar
-                      className='border-gray-300 border rounded-full '
+                      className='border-gray-300 border rounded-full  '
                       alt='User settings'
                       img={AvatarPlaceHolder}
                       rounded={true}
@@ -63,10 +90,14 @@ const TopNavbar = () => {
                   }
                 >
                   <Dropdown.Header>
-                    <span className='block text-sm'>User name</span>
+                    <span className='block text-sm '>User name</span>
                   </Dropdown.Header>
-                  <Dropdown.Item>Home Page</Dropdown.Item>
-                  <Dropdown.Item>Profile Page</Dropdown.Item>
+                  <Link to={'/'}>
+                    <Dropdown.Item>Home Page</Dropdown.Item>
+                  </Link>
+                  <Link to={'/profile'}>
+                    <Dropdown.Item>Profile Page</Dropdown.Item>
+                  </Link>
                   <Dropdown.Divider />
                   <Dropdown.Item>Sign out</Dropdown.Item>
                 </Dropdown>
