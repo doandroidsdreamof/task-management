@@ -9,6 +9,9 @@ import FormError from './FormError';
 import TopNavbar from './TopNavbar';
 import AsideBar from './AsideBar';
 import DarkModeToggle from './DarkModeToggle';
+import BoardIndicator from './BoardIndicator';
+import AddTaskButton from './AddTaskButton';
+
 
 export {
   LoginForm,
@@ -22,4 +25,6 @@ export {
   TopNavbar,
   AsideBar,
   DarkModeToggle,
+  BoardIndicator,
+  AddTaskButton
 };

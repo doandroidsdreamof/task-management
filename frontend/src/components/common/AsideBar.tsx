@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { toggleNavBar } from '../../store/slices/slicesIndex';
 
-import { DarkModeToggle } from '../common/commonIndex';
+import { DarkModeToggle,BoardIndicator } from '../common/commonIndex';
 
 const AsideBar = () => {
   const navbarRedux = useAppSelector((state) => state.store.navbarSlice.navbarState);
@@ -20,10 +20,10 @@ const AsideBar = () => {
         <div>
           <ul className='space-y-2'>
             <li>
-              <div
-                className='flex cursor-pointer items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
-              >
-
+              <BoardIndicator />
+            </li>
+            <li>
+              <div className='flex  cursor-pointer items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'>
                 <span className='ml-3'>Dashboard</span>
               </div>
             </li>

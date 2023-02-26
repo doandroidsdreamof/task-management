@@ -69,7 +69,7 @@ const TopNavbar = () => {
                 </>
               )}
             </button>
-            <span className='self-center font-roboto  text-2xl font-bold sm:text-2xl whitespace-nowrap dark:text-white'>
+            <span className='self-center ml-1 md:ml-5  font-roboto  text-2xl font-bold sm:text-2xl whitespace-nowrap dark:text-white'>
               Kanban.
             </span>
           </div>
