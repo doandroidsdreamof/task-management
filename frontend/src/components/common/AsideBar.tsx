@@ -9,13 +9,15 @@ import { DarkModeToggle, BoardIndicator } from '../common/commonIndex';
 const AsideBar = () => {
   const navbarRedux = useAppSelector((state) => state.store.navbarSlice.navbarState);
 
+
+
   return (
     <aside
       id='logo-sidebar'
       className={
-        navbarRedux
-          ? 'fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform  bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700'
-          : 'fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700'
+        navbarRedux === false
+          ? 'relative  top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform  bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700'
+          : 'relative  top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform  -translate-x-full bg-white border-r border-gray-200  dark:bg-gray-800 dark:border-gray-700'
       }
       aria-label='Sidebar'
     >

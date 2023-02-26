@@ -12,6 +12,7 @@ import DarkModeToggle from './DarkModeToggle';
 import BoardIndicator from './BoardIndicator';
 import AddTaskButton from './AddTaskButton';
 import SearchInput from './SearchInput';
+import Notification from './Notification';
 
 
 export {
@@ -28,5 +29,6 @@ export {
   DarkModeToggle,
   BoardIndicator,
   AddTaskButton,
-  SearchInput
+  SearchInput,
+  Notification
 };

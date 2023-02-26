@@ -11,12 +11,12 @@ interface FormLayoutProps {
 
 const HomeLayout: FC<FormLayoutProps> = ({ asideBar, topNavbar, addTaskButton, searchInput }: FormLayoutProps) => {
   return (
-    <main className='bg-gray-200 h-screen flex flex-col '>
-      <div>
-      <div>{topNavbar}</div>
-      <div >{asideBar}</div>
+    <main className='bg-gray-200 flex flex-row     '>
+      <div className=' md:w-fit w-0 '>
+        <div>{topNavbar}</div>
+        <div>{asideBar}</div>
       </div>
-      <div className=' sm:ml-64 px-2 border items-center  border-black ml-auto  flex-row mt-24 justify-between  flex   w-full   '>
+      <div className=' flex flex-row flex-1  items-center h-fit justify-between px-3 pt-20 relative '>
         <div className=''>{addTaskButton} </div>
         <div className=''>{searchInput} </div>
       </div>

@@ -3,7 +3,7 @@ import formSlice from './formSlice';
 import navbarSlice from './navbarSlice';
 
 export const { saveUserName, saveEmail, savePassword, saveConfirmPassword, cleanUpForm } = formSlice.actions;
-export const {toggleNavBar} = navbarSlice.actions;
+export const {toggleNavbar,resetNavbar} = navbarSlice.actions;
 
 
 

@@ -6,10 +6,12 @@ const navbarSlice = createSlice({
     navbarState: false,
   },
   reducers: {
-    toggleNavBar: (state) => {
+    toggleNavbar: (state) => {
         state.navbarState = !state.navbarState
-
     },
+    resetNavbar: (state) => {
+      state.navbarState = false;
+  },
   },
 });
 

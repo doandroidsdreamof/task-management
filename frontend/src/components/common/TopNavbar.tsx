@@ -1,22 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AvatarPlaceHolder from '../../assets/images/avatar-placeholder.png';
 
 //? redux-toolkit //
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { toggleNavBar } from '../../store/slices/slicesIndex';
+import { toggleNavbar, resetNavbar } from '../../store/slices/slicesIndex';
 
 import { Dropdown, Avatar } from 'flowbite-react';
 
 //? react-router-dom //
 import { Link } from 'react-router-dom';
 
+import Notification from './Notification';
+
 const TopNavbar = () => {
   const dispatch = useAppDispatch();
   const navbarRedux = useAppSelector((state) => state.store.navbarSlice.navbarState);
+  const mediaQuery = window.matchMedia('(max-width: 767px)');
 
   const handleToggle = function () {
-    dispatch(toggleNavBar());
+    dispatch(toggleNavbar());
   };
+
+  useEffect(() => {
+    //* reset toggle state with screen change //
+    new ResizeObserver(() => {
+      console.log('observer works');
+      if (mediaQuery.matches) {
+        return;
+      }
+      if (!mediaQuery.matches) {
+        dispatch(resetNavbar());
+        return;
+      }
+    }).observe(document.body);
+  }, []);
 
   return (
     <nav className='fixed top-0 z-50 w-full   bg-opacity-60 backdrop-filter backdrop-blur-lg bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700'>
@@ -31,7 +48,7 @@ const TopNavbar = () => {
               type='button'
               className='inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
             >
-              {navbarRedux === false ? (
+              {navbarRedux === true ? (
                 <>
                   <span className='sr-only'>Open sidebar</span>
                   <svg
@@ -75,6 +92,7 @@ const TopNavbar = () => {
           </div>
           <div className='flex items-center'>
             <div className='flex items-center ml-3'>
+              <Notification />
               <div>
                 <Dropdown
                   className='w-40'
