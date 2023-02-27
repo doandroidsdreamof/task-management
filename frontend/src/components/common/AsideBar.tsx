@@ -2,14 +2,11 @@ import React, { useEffect } from 'react';
 
 //? redux-toolkit //
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { toggleNavBar } from '../../store/slices/slicesIndex';
 
 import { DarkModeToggle, BoardIndicator } from '../common/commonIndex';
 
 const AsideBar = () => {
   const navbarRedux = useAppSelector((state) => state.store.navbarSlice.navbarState);
-
-
 
   return (
     <aside

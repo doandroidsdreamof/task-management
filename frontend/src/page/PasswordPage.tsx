@@ -4,6 +4,9 @@ import React from 'react'
 import FormLayout from '../layout/FormLayout';
 import ResetPasswordForm from '../components/resetPassword/ResetPasswordForm';
 
+
+
+
 const PasswordPage = () => {
   return (
     <>

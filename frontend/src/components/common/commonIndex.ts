@@ -13,7 +13,7 @@ import BoardIndicator from './BoardIndicator';
 import AddTaskButton from './AddTaskButton';
 import SearchInput from './SearchInput';
 import Notification from './Notification';
-
+import SelectSort from './SelectSort';
 
 export {
   LoginForm,
@@ -30,5 +30,6 @@ export {
   BoardIndicator,
   AddTaskButton,
   SearchInput,
-  Notification
+  Notification,
+  SelectSort,
 };

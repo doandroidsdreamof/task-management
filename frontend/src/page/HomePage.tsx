@@ -1,6 +1,6 @@
 import React, { FC,useRef } from 'react';
 import HomeLayout from '../layout/HomeLayout';
-import { TopNavbar, AsideBar, AddTaskButton, SearchInput } from '../components/common/commonIndex';
+import { TopNavbar, AsideBar, AddTaskButton, SearchInput,SelectSort } from '../components/common/commonIndex';
 
 const HomePage = () => {
 
@@ -11,6 +11,7 @@ const HomePage = () => {
         addTaskButton={<AddTaskButton />}
         topNavbar={<TopNavbar  />}
         asideBar={<AsideBar  />}
+        selectSort={<SelectSort />}
       />
     </>
   );

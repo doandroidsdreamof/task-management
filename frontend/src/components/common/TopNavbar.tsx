@@ -23,7 +23,7 @@ const TopNavbar = () => {
 
   useEffect(() => {
     //* reset toggle state with screen change //
-    new ResizeObserver(() => {
+    const resizeObserver: any  = new ResizeObserver(() => {
       if (mediaQuery.matches) {
         return;
       }
@@ -94,7 +94,7 @@ const TopNavbar = () => {
               <Notification />
               <div>
                 <Dropdown
-                  className='w-40'
+                  className='w-72'
                   arrowIcon={false}
                   inline={true}
                   label={
