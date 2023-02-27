@@ -14,6 +14,8 @@ import AddTaskButton from './AddTaskButton';
 import SearchInput from './SearchInput';
 import Notification from './Notification';
 import SelectSort from './SelectSort';
+import AddBoard from './AddBoard';
+
 
 export {
   LoginForm,
@@ -32,4 +34,6 @@ export {
   SearchInput,
   Notification,
   SelectSort,
+  AddBoard,
+  
 };

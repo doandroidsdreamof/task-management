@@ -6,10 +6,10 @@ const DarkModeToggle = () => {
 
   return (
     <>
-      <div className='w-fit mt-auto  px-12 p-3 bg-gray-50 text-center h-fit   flex flex-col justify-center items-center'>
+      <div className='w-fit   px-12 p-2 bg-gray-200 text-center h-fit  rounded-md flex flex-col justify-center items-center'>
         <div className='flex justify-center items-center'>
           <span className=''>
-            <svg className={toggle ? 'h-6 w-6 text-gray-300' : 'h-6 w-6 text-gray-500'} fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+            <svg className={toggle ? 'h-5 w-5 text-gray-300' : 'h-5 w-5 text-gray-500'} fill='none' viewBox='0 0 24 24' stroke='currentColor'>
               <path
                 strokeLinecap='round'
                 strokeLinejoin='round'
@@ -18,12 +18,12 @@ const DarkModeToggle = () => {
               />
             </svg>
           </span>
-          <div className="{ 'bg-cyan-700'}">
+          <div className="">
             <div className='w-full h-full flex flex-col justify-center items-center'>
               <div className='flex justify-center items-center'></div>
 
               <button onClick={() => setToggle(!toggle)} className='flex justify-center items-center '>
-                <div className={toggle ? 'w-14 h-7 flex items-center bg-purple-400 rounded-full mx-3 px-1 ' : 'w-14 h-7 flex items-center bg-purple-800 rounded-full mx-3 px-1 '}>
+                <div className={toggle ? 'w-14 h-7 flex items-center bg-purple-500 rounded-full mx-3 px-1 ' : 'w-14 h-7 flex items-center bg-purple-800 rounded-full mx-3 px-1 '}>
                   <div
                     className={
                       toggle
@@ -36,7 +36,7 @@ const DarkModeToggle = () => {
             </div>
           </div>
           <span className=''>
-            <svg className={toggle ? 'h-6 w-6 text-gray-500' : 'h-6 w-6 text-gray-300'} fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+            <svg className={toggle ? 'h-5 w-5 text-gray-500' : 'h-5 w-5 text-gray-300'} fill='none' viewBox='0 0 24 24' stroke='currentColor'>
               <path
                 strokeLinecap='round'
                 strokeLinejoin='round'

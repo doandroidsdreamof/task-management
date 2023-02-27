@@ -3,9 +3,13 @@ import React, { useEffect } from 'react';
 //? redux-toolkit //
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
-import { DarkModeToggle, BoardIndicator } from '../common/commonIndex';
+import { DarkModeToggle, BoardIndicator, AddBoard } from '../common/commonIndex';
 
-const AsideBar = () => {
+interface AsideBarProps {
+  page: string;
+}
+
+const AsideBar = ({ page }: AsideBarProps) => {
   const navbarRedux = useAppSelector((state) => state.store.navbarSlice.navbarState);
 
   return (
@@ -19,7 +23,7 @@ const AsideBar = () => {
       aria-label='Sidebar'
     >
       <div className='h-full flex flex-col  px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800'>
-        <div>
+        <div className='overflow-y-auto'>
           <ul className='space-y-2'>
             <li>
               <BoardIndicator />
@@ -31,7 +35,12 @@ const AsideBar = () => {
             </li>
           </ul>
         </div>
+        <div className='w-full mt-auto px-1.5 items-center flex flex-col justify-center'>
+        <AddBoard />
+
         <DarkModeToggle />
+        </div>
+
       </div>
     </aside>
   );

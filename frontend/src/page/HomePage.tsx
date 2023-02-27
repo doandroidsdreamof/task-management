@@ -10,7 +10,7 @@ const HomePage = () => {
         searchInput={<SearchInput />}
         addTaskButton={<AddTaskButton />}
         topNavbar={<TopNavbar  />}
-        asideBar={<AsideBar  />}
+        asideBar={<AsideBar page={'homePage'}  />}
         selectSort={<SelectSort />}
       />
     </>

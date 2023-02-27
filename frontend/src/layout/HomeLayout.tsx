@@ -15,6 +15,8 @@ const HomeLayout: FC<FormLayoutProps> = ({
   searchInput,
   selectSort,
 }: FormLayoutProps) => {
+
+
   return (
     <main className='bg-gray-200 flex flex-row     '>
       <div className=' md:w-fit w-0 '>
