@@ -1,0 +1,23 @@
+{
+  "name": "task-management",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doandroidsdreamof/task-management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doandroidsdreamof/task-management/issues"
+  },
+  "homepage": "https://github.com/doandroidsdreamof/task-management#readme",
+  "dependencies": {
+    "jest": "^29.4.3"
+  }
+}

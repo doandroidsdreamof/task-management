@@ -1,4 +1,4 @@
-/* eslint-disable */
+// eslint-disable //
 {
   "compilerOptions": {
     "target": "ESNext",
