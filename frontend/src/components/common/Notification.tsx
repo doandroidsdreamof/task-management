@@ -3,13 +3,20 @@ import React, { useEffect, useState, useRef, MouseEventHandler } from 'react';
 const Notification = () => {
   const [toggle, setToggle] = useState<boolean>(false);
   const notificationRef = React.useRef<any>(null);
+  const iconRef = React.useRef<any>(null);
 
   useEffect(() => {
     document.addEventListener('mousedown', closeOpenMenus);
+    return () => document.removeEventListener('mousedown', closeOpenMenus);
   }, []);
 
   const closeOpenMenus = (e: MouseEvent): void => {
-    if (notificationRef.current && notificationRef && !notificationRef.current.contains(e.target)) {
+    if (
+      !iconRef.current.contains(e.target) &&
+      notificationRef.current &&
+      notificationRef &&
+      !notificationRef.current.contains(e.target)
+    ) {
       setToggle(false);
     }
   };
@@ -17,9 +24,9 @@ const Notification = () => {
   return (
     <>
       <button
+        ref={iconRef}
         onClick={() => setToggle(!toggle)}
         type='button'
-        data-dropdown-toggle='notification-dropdown'
         className='p-2 mr-1 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600'
       >
         <span className='sr-only'>View notifications</span>
@@ -38,7 +45,7 @@ const Notification = () => {
       <div
         ref={notificationRef}
         className={
-          !toggle
+          toggle === false
             ? 'hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700'
             : 'top-16 right-5 fixed overflow-hidden z-50  max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700'
         }
