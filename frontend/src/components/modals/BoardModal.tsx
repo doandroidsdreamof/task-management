@@ -3,7 +3,7 @@ import React from 'react';
 const BoardModal = () => {
 
 
-  //* hidden yukarıda olmalı
+ 
   return (
     <>
 

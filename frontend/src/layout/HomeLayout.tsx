@@ -14,7 +14,8 @@ const HomeLayout: FC<FormLayoutProps> = ({
   topNavbar,
   addTaskButton,
   searchInput,
-
+  selectSort,
+  boardModal,
 }: FormLayoutProps) => {
   return (
     <main className='bg-gray-200 flex flex-row'>
