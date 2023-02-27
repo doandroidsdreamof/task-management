@@ -6,6 +6,7 @@ interface FormLayoutProps {
   addTaskButton: React.ReactNode;
   searchInput: React.ReactNode;
   selectSort: React.ReactNode;
+  boardModal: React.ReactNode;
 }
 
 const HomeLayout: FC<FormLayoutProps> = ({
@@ -14,12 +15,16 @@ const HomeLayout: FC<FormLayoutProps> = ({
   addTaskButton,
   searchInput,
   selectSort,
+  boardModal,
 }: FormLayoutProps) => {
-
-
   return (
-    <main className='bg-gray-200 flex flex-row     '>
+    <main className='bg-gray-200 flex flex-row'>
       <div className=' md:w-fit w-0 '>
+        <div className='w-full h-screen bg-opacity-75  bg-black bg-transparent  z-50 fixed justify-center flex'>
+          {' '}
+          {boardModal}
+        </div>
+
         <div>{topNavbar}</div>
         <div>{asideBar}</div>
       </div>

@@ -14,7 +14,7 @@ import AddTaskButton from './AddTaskButton';
 import SearchInput from './SearchInput';
 import Notification from './Notification';
 import SelectSort from './SelectSort';
-import AddBoard from './AddBoard';
+import CreateBoard from './CreateBoard';
 
 
 export {
@@ -34,6 +34,6 @@ export {
   SearchInput,
   Notification,
   SelectSort,
-  AddBoard,
-  
+  CreateBoard,
+
 };

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 //? redux-toolkit //
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
-import { DarkModeToggle, BoardIndicator, AddBoard } from '../common/commonIndex';
+import { DarkModeToggle, BoardIndicator, CreateBoard } from '../common/commonIndex';
 
 interface AsideBarProps {
   page: string;
@@ -36,11 +36,9 @@ const AsideBar = ({ page }: AsideBarProps) => {
           </ul>
         </div>
         <div className='w-full mt-auto px-1.5 items-center flex flex-col justify-center'>
-        <AddBoard />
-
-        <DarkModeToggle />
+          {page === 'homePage' ? <CreateBoard /> : <></>}
+          <DarkModeToggle />
         </div>
-
       </div>
     </aside>
   );
