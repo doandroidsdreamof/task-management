@@ -1,7 +1,7 @@
 {
   "name": "task-management",
   "version": "1.0.0",
-  "description": "<div align=\"center\">",
+  "description": "root",
   "main": "index.js",
   "scripts": {
     "test": "jest"
