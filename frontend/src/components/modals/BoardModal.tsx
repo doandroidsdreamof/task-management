@@ -1,11 +1,8 @@
 import React from 'react';
 
 const BoardModal = () => {
-
-
   return (
     <>
-
       <div
         id='updateProductModal'
         aria-hidden='true'
@@ -87,9 +84,7 @@ const BoardModal = () => {
                     className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'
                     placeholder='Write a description...'
                   >
-                    Standard glass, 3.8GHz 8-core 10th-generation Intel Core i7 processor, Turbo Boost up to 5.0GHz,
-                    16GB 2666MHz DDR4 memory, Radeon Pro 5500 XT with 8GB of GDDR6 memory, 256GB SSD storage, Gigabit
-                    Ethernet, Magic Mouse 2, Magic Keyboard - US
+              
                   </textarea>
                 </div>
               </div>
@@ -98,6 +93,7 @@ const BoardModal = () => {
                   type='submit'
                   className='text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800'
                 >
+
                   Update product
                 </button>
                 <button
